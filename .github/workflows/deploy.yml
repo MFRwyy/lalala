@@ -4,18 +4,16 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
     - name: Build and Deploy
       uses: crazy-max/ghaction-github-pages@v2
-      with:
+        with:
           target_branch: gh-pages
-          build_dir: dist
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        # BRANCH: gh-pages
-        # FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_SCRIPT: npm install && npm run build
