@@ -11,8 +11,11 @@ jobs:
       uses: actions/checkout@master
     - name: Build and Deploy
       uses: crazy-max/ghaction-github-pages@v2
+      with:
+          target_branch: gh-pages
+          build_dir: dist
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
+        # BRANCH: gh-pages
+        # FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
