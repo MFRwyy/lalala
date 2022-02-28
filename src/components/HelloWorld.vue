@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    啦啦啦
+    <h1>臭宝儿，我爱你</h1>
   </div>
 </template>
 
