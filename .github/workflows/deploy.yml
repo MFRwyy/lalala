@@ -16,9 +16,10 @@ jobs:
     # 将 github项目 clone 到 ubuntu-latest 上
     - name: Checkout
       uses: actions/checkout@master
-    # 安装依赖、构建项目
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
+    
+    - name: GitHub Pages
+      # 第三方插件，安装依赖、构建项目
+      uses: crazy-max/ghaction-github-pages@v2.6.0
       env:
         # 自己项目对应的 token
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
