@@ -17,7 +17,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    - name: GitHub Pages
+    - name: Build and Deploy
       # 第三方插件，安装依赖、构建项目
       uses: crazy-max/ghaction-github-pages@v2.6.0
       env:
