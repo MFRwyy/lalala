@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>臭宝儿，我爱你</h1>
+    <h1>你个傻狗，小超超！！！</h1>
+    <img src="../assets/aa.png">
   </div>
 </template>
 
@@ -9,7 +10,6 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
