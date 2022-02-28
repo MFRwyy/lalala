@@ -1,0 +1,29 @@
+# 工作流名称
+name: GitHub Actions Build and Deploy Demo
+
+# 往 master 分支 push 时触发
+on:
+  push:
+    branches:
+      - master
+      
+# 工作流
+jobs:
+  build-and-deploy:
+    # 临时虚拟机，用完自动关闭
+    runs-on: ubuntu-latest
+    steps: 
+    # 将 github项目 clone 到 ubuntu-latest 上
+    - name: Checkout
+      uses: actions/checkout@master
+    # 安装依赖、构建项目
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        # 自己项目对应的 token
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
+        BUILD_SCRIPT: npm install && npm run build
+        
+# https://github.com/marketplace/actions/deploy-to-github-pages
